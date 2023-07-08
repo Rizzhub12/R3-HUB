@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>قائمة السكربتات</title>
+</head>
+<body>
+  <button onclick="openScriptSection()">SCRIPT</button>
+  <button onclick="runAimbotScript()">AIMBOT</button>
+
+  <script>
+    function openScriptSection() {
+      // يمكنك هنا تنفيذ أي رمز يقوم بنقل المستخدم إلى قسم السكربتات المخصص
+    }
+
+    function runAimbotScript() {
+      // يمكنك هنا تنفيذ سطر الأوامر الخاص بتنفيذ السكربت في روبلوكس
+      var scriptURL = "https://raw.githubusercontent.com/TirSANX/CrimsonHUB/main/C_Loader";
+      // تنفيذ السكربت بواسطة تحميله وتنفيذه
+      var scriptElement = document.createElement('script');
+      scriptElement.src = scriptURL;
+      document.body.appendChild(scriptElement);
+    }
+  </script>
+</body>
+</html>
