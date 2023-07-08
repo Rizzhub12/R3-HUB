@@ -44,4 +44,4 @@ end)
 
 AIMBOT.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/TirSANX/CrimsonHUB/main/C_Loader'))()
-end)
+end
