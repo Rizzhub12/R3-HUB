@@ -1,47 +1,44 @@
-local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local ScriptButton = Instance.new("TextButton")
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.CoreGui
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+mainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+mainFrame.BorderColor3 = Color3.new(0.5, 0.5, 0.5)
+mainFrame.BorderSizePixel = 2
+mainFrame.Parent = gui
 
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MainFrame.Position = UDim2.new(0.5, -75, 0.5, -50)
-MainFrame.Size = UDim2.new(0, 150, 0, 100)
+local scriptButton = Instance.new("TextButton")
+scriptButton.Size = UDim2.new(0, 100, 0, 30)
+scriptButton.Position = UDim2.new(0.5, -50, 0.1, 0)
+scriptButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+scriptButton.Text = "SCRIPT"
+scriptButton.TextColor3 = Color3.new(1, 1, 1)
+scriptButton.Parent = mainFrame
 
-ScriptButton.Parent = MainFrame
-ScriptButton.BackgroundColor3 = Color3.fromRGB(65, 128, 244)
-ScriptButton.Position = UDim2.new(0.5, -50, 0, 10)
-ScriptButton.Size = UDim2.new(0, 100, 0, 30)
-ScriptButton.Font = Enum.Font.SourceSans
-ScriptButton.Text = "SCRIPT"
-ScriptButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-ScriptButton.TextSize = 14
+local scriptFrame = Instance.new("Frame")
+scriptFrame.Size = UDim2.new(0, 200, 0, 150)
+scriptFrame.Position = UDim2.new(1, 0, 0, 0)
+scriptFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+scriptFrame.BorderColor3 = Color3.new(0.5, 0.5, 0.5)
+scriptFrame.BorderSizePixel = 2
+scriptFrame.ClipsDescendants = true
+scriptFrame.Visible = false
+scriptFrame.Parent = mainFrame
 
-local ScriptFrame = Instance.new("Frame")
-local AIMBOT = Instance.new("TextButton")
+local aimbotButton = Instance.new("TextButton")
+aimbotButton.Size = UDim2.new(0, 100, 0, 30)
+aimbotButton.Position = UDim2.new(0.5, -50, 0.3, 0)
+aimbotButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+aimbotButton.Text = "AIMBOT"
+aimbotButton.TextColor3 = Color3.new(1, 1, 1)
+aimbotButton.Parent = scriptFrame
 
-ScriptFrame.Parent = MainFrame
-ScriptFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScriptFrame.Position = UDim2.new(1, 5, 0, 0)
-ScriptFrame.Size = UDim2.new(0, 150, 0, 100)
-ScriptFrame.Visible = false
-
-AIMBOT.Parent = ScriptFrame
-AIMBOT.BackgroundColor3 = Color3.fromRGB(65, 128, 244)
-AIMBOT.Position = UDim2.new(0.5, -50, 0, 50)
-AIMBOT.Size = UDim2.new(0, 100, 0, 30)
-AIMBOT.Font = Enum.Font.SourceSans
-AIMBOT.Text = "AIMBOT"
-AIMBOT.TextColor3 = Color3.fromRGB(255, 255, 255)
-AIMBOT.TextSize = 14
-
-ScriptButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = false
-    ScriptFrame.Visible = true
+scriptButton.MouseButton1Click:Connect(function()
+    scriptFrame.Visible = true
 end)
 
-AIMBOT.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/TirSANX/CrimsonHUB/main/C_Loader'))()
-end
+aimbotButton.MouseButton1Click:Connect(function()
+    -- قم بتنفيذ الإجراءات المطلوبة عند النقر على زر AIMBOT هنا
+end)
